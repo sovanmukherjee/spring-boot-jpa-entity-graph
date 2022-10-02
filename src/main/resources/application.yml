@@ -1,0 +1,25 @@
+
+spring:
+  application:
+    name: spring-boot-jpa-entity-graph
+  datasource:
+    url:  jdbc:mysql://localhost:3306/my_test_db?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: password
+    initialization-mode: always
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        id:
+          new_generator_mappings: false
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+    pool:
+      initial-size: 100
+      max-size: 500
+      max-idle-time: 30m
+      validation-query: SELECT 1
