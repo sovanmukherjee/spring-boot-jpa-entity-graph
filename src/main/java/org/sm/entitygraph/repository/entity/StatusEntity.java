@@ -25,6 +25,6 @@ public class StatusEntity implements Serializable {
     private int id;
     private String code;
     private String desc;
-    @OneToMany(mappedBy="status",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="status",fetch = FetchType.LAZY)
     private Set<SubStatusEntity> subStatuses;
 }

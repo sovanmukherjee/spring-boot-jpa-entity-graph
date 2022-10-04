@@ -57,11 +57,11 @@ public class UserEntity implements Serializable {
     @Column(name="status")
     private int statusRef;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "id", referencedColumnName = "status")
     private List<StatusEntity> status;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address")
     private AddressEntity address;
 }
